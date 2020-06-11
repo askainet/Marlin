@@ -38,8 +38,6 @@ extern "C" {
 #include "../../sd/cardreader.h"
 #include "../../inc/MarlinConfig.h"
 #include "../../core/millis_t.h"
-#include "HAL.h"
-#include "timers.h"
 
 extern uint32_t MSC_SD_Init(uint8_t pdrv);
 extern "C" int isLPC1769();
@@ -90,7 +88,7 @@ void HAL_init() {
 
   //debug_frmwrk_init();
   //_DBG("\n\nDebug running\n");
-  // Initialise the SD card chip select pins as soon as possible
+  // Initialize the SD card chip select pins as soon as possible
   #if PIN_EXISTS(SS)
     OUT_WRITE(SS_PIN, HIGH);
   #endif
