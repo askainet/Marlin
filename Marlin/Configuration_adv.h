@@ -620,15 +620,6 @@
 
 // @section homing
 
-<<<<<<< HEAD
-// Homing hits each endstop, retracts by these distances, then does a slower bump.
-#define X_HOME_BUMP_MM 5
-#define Y_HOME_BUMP_MM 5
-#define Z_HOME_BUMP_MM 2
-#define HOMING_BUMP_DIVISOR { 2, 2, 4 }  // Re-Bump Speed Divisor (Divides the Homing Feedrate)
-#define QUICK_HOME                     // If homing includes X and Y, do a diagonal move initially
-//#define HOMING_BACKOFF_MM { 2, 2, 2 }  // (mm) Move away from the endstops after homing
-=======
 /**
  * Homing Procedure
  * Homing (G28) does an indefinite move towards the endstops to establish
@@ -641,7 +632,6 @@
 #define HOMING_BUMP_DIVISOR { 2, 2, 4 }       // Re-Bump Speed Divisor (Divides the Homing Feedrate)
 
 //#define HOMING_BACKOFF_POST_MM { 2, 2, 2 }  // (mm) Backoff from endstops after homing
->>>>>>> bugfix-2.0.x
 
 //#define QUICK_HOME                          // If G28 contains XY do a diagonal move first
 //#define HOME_Y_BEFORE_X                     // If G28 contains XY home Y before X
@@ -1414,17 +1404,11 @@
   //#define TOUCH_UI_800x480
 
   // Mappings for boards with a standard RepRapDiscount Display connector
-<<<<<<< HEAD
-  //#define AO_EXP1_PINMAP    // AlephObjects CLCD UI EXP1 mapping
-  //#define AO_EXP2_PINMAP    // AlephObjects CLCD UI EXP2 mapping
-  //#define CR10_TFT_PINMAP   // Rudolph Riedel's CR10 pin mapping
-=======
   //#define AO_EXP1_PINMAP      // AlephObjects CLCD UI EXP1 mapping
   //#define AO_EXP2_PINMAP      // AlephObjects CLCD UI EXP2 mapping
   //#define CR10_TFT_PINMAP     // Rudolph Riedel's CR10 pin mapping
   //#define S6_TFT_PINMAP       // FYSETC S6 pin mapping
 
->>>>>>> bugfix-2.0.x
   //#define OTHER_PIN_LAYOUT  // Define pins manually below
   #if ENABLED(OTHER_PIN_LAYOUT)
     // The pins for CS and MOD_RESET (PD) must be chosen.
@@ -1667,15 +1651,7 @@
 
   // Add additional compensation depending on hotend temperature
   // Note: this values cannot be calibrated and have to be set manually
-<<<<<<< HEAD
-  #ifdef PROBE_TEMP_COMPENSATION
-    // Max temperature that can be reached by heated bed.
-    // This is required only for the calibration process.
-    #define PTC_MAX_BED_TEMP BED_MAXTEMP
-
-=======
   #if ENABLED(PROBE_TEMP_COMPENSATION)
->>>>>>> bugfix-2.0.x
     // Park position to wait for probe cooldown
     #define PTC_PARK_POS   { 0, 0, 100 }
 
@@ -1712,7 +1688,7 @@
     // increasing the height the probe is raised to.
     // #define PTC_PROBE_RAISE 15U
 
-    // If the probe is outside of the defined range, use linear extrapolation using the closest 
+    // If the probe is outside of the defined range, use linear extrapolation using the closest
     // point and the PTC_LINEAR_EXTRAPOLATION'th next point. E.g. if set to 4 it will use data[0]
     // and data[4] to perform linear extrapolation for values below PTC_SAMPLE_START.
     // #define PTC_LINEAR_EXTRAPOLATION 4
